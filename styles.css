@@ -310,6 +310,21 @@ html[dir="rtl"] .hero-overlay {
     display: none;
 }
 
+.carousel-arrow {
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.carousel-container:hover .carousel-arrow {
+    opacity: 1;
+}
+
+.carousel-arrow:hover {
+    background: var(--lime) !important;
+    color: var(--bg-color) !important;
+    transform: translateY(-50%) scale(1.1) !important;
+}
+
 .video-card {
     min-width: 320px;
     max-width: 320px;

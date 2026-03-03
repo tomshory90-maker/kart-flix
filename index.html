@@ -32,16 +32,27 @@
             <a href="#hero">ראשי</a>
             <a href="#library">הספרייה</a>
         </nav>
-        <div class="nav-profile">
-            <div class="avatar"><i class="fas fa-user-tie"></i></div>
-            <span>אזור אישי</span>
+        <div class="nav-actions" style="display: flex; align-items: center; gap: 15px;">
+            <!-- Language Switcher -->
+            <div class="lang-switcher">
+                <select id="langSelect" class="glass-effect"
+                    style="background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2); padding: 5px 10px; border-radius: 20px; font-family: 'Heebo', sans-serif; cursor: pointer; outline: none;">
+                    <option value="he" style="color: black;">עברית</option>
+                    <option value="ru" style="color: black;">Русский</option>
+                </select>
+            </div>
+
+            <div class="nav-profile">
+                <div class="avatar"><i class="fas fa-user-tie"></i></div>
+                <span id="personalAreaText">אזור אישי</span>
+            </div>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section id="hero" class="hero">
         <div class="hero-bg">
-            <img src="assets/beautician_modern_clinic_1772553460640.png" alt="Hero Background">
+            <img src="assets/thumbnails/anti_aging.png" alt="Hero Background" style="object-position: center 20%;">
             <div class="hero-overlay"></div>
         </div>
         <div class="hero-content">

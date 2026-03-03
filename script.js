@@ -145,7 +145,78 @@ document.addEventListener('DOMContentLoaded', () => {
         ]
     };
 
-    renderLibrary(data.categories);
+    // --- Language Switcher Logic ---
+    const langSelect = document.getElementById('langSelect');
+    const personalAreaText = document.getElementById('personalAreaText');
+    const heroTitle = document.querySelector('.hero-title');
+    const heroDesc = document.querySelector('.hero-desc');
+    const heroBadge = document.querySelector('.badge');
+
+    // Store original unabridged categories data
+    const allCategories = data.categories;
+
+    function applyLanguage(lang) {
+        // 1. Text translations
+        if (lang === 'ru') {
+            document.documentElement.lang = 'ru';
+            document.documentElement.dir = 'ltr'; // Set ltr for Russian
+            personalAreaText.textContent = 'Личный кабинет';
+            heroBadge.textContent = 'Рекомендуемое обучение';
+            heroTitle.innerHTML = 'Новое поколение<br><span class="text-lime">Омолаживающих процедур</span>';
+            heroDesc.textContent = 'Изучите новейшие протоколы 2026 года с лучшими экспертами KART. Смотрите практические демонстрации и открывайте прорывные техники.';
+            document.querySelector('.nav-links a[href="#hero"]').textContent = 'Главная';
+            document.querySelector('.nav-links a[href="#library"]').textContent = 'Библиотека';
+            document.querySelector('#heroPlayBtn').innerHTML = '<i class="fas fa-play"></i> Смотреть сейчас';
+            document.querySelector('.btn-secondary').innerHTML = '<i class="fas fa-info-circle"></i> Подробнее';
+        } else {
+            document.documentElement.lang = 'he';
+            document.documentElement.dir = 'rtl'; // Revert back to rtl for hebrew
+            personalAreaText.textContent = 'אזור אישי';
+            heroBadge.textContent = 'הדרכה מומלצת';
+            heroTitle.innerHTML = `הדור הבא של<br><span class="text-lime">טיפולי האנטי-אייג'ינג</span >`;
+            heroDesc.textContent = 'למדי את הפרוטוקולים החדשניים ביותר של 2026 עם מיטב המומחים של KART. צפי בהדגמות מעשיות וגלי טכניקות פורצות דרך.';
+            document.querySelector('.nav-links a[href="#hero"]').textContent = 'ראשי';
+            document.querySelector('.nav-links a[href="#library"]').textContent = 'הספרייה';
+            document.querySelector('#heroPlayBtn').innerHTML = '<i class="fas fa-play"></i> צפייה עכשיו';
+            document.querySelector('.btn-secondary').innerHTML = '<i class="fas fa-info-circle"></i> מידע נוסף';
+        }
+
+        // 2. Filter Categories by Language
+        let filteredCategories;
+        if (lang === 'ru') {
+            // Show Russian Pedicure and Cosmetics
+            filteredCategories = allCategories.filter(cat => cat.id === 'pedicure-ru' || cat.id === 'cosmetics');
+
+            // Translate the "Cosmetics" title to Russian for display
+            filteredCategories = filteredCategories.map(cat => {
+                if (cat.id === 'cosmetics') {
+                    return { ...cat, title: 'Косметология' };
+                }
+                return cat;
+            });
+        } else {
+            // Show Hebrew Pedicure and Cosmetics
+            filteredCategories = allCategories.filter(cat => cat.id === 'pedicure-he' || cat.id === 'cosmetics');
+
+            // Ensure Hebrew title
+            filteredCategories = filteredCategories.map(cat => {
+                if (cat.id === 'cosmetics') {
+                    return { ...cat, title: 'קוסמטיקה' };
+                }
+                return cat;
+            });
+        }
+
+        renderLibrary(filteredCategories);
+    }
+
+    // Listen for language change
+    langSelect.addEventListener('change', (e) => {
+        applyLanguage(e.target.value);
+    });
+
+    // Initial load
+    applyLanguage(langSelect.value);
 
     // --- Render Library ---
     function renderLibrary(categories) {
@@ -165,6 +236,45 @@ document.addEventListener('DOMContentLoaded', () => {
             // Carousel Container
             const carouselContainer = document.createElement('div');
             carouselContainer.className = 'carousel-container';
+            carouselContainer.style.position = 'relative';
+
+            // Left Arrow
+            const leftBtn = document.createElement('button');
+            leftBtn.className = 'carousel-arrow left-arrow glass-effect';
+            leftBtn.innerHTML = '<i class="fas fa-chevron-left"></i>';
+            leftBtn.style.position = 'absolute';
+            leftBtn.style.left = '10px';
+            leftBtn.style.top = '50%';
+            leftBtn.style.transform = 'translateY(-50%)';
+            leftBtn.style.zIndex = '10';
+            leftBtn.style.cursor = 'pointer';
+            leftBtn.style.border = 'none';
+            leftBtn.style.borderRadius = '50%';
+            leftBtn.style.width = '40px';
+            leftBtn.style.height = '40px';
+            leftBtn.style.display = 'flex';
+            leftBtn.style.alignItems = 'center';
+            leftBtn.style.justifyContent = 'center';
+            leftBtn.style.color = 'white';
+
+            // Right Arrow
+            const rightBtn = document.createElement('button');
+            rightBtn.className = 'carousel-arrow right-arrow glass-effect';
+            rightBtn.innerHTML = '<i class="fas fa-chevron-right"></i>';
+            rightBtn.style.position = 'absolute';
+            rightBtn.style.right = '10px';
+            rightBtn.style.top = '50%';
+            rightBtn.style.transform = 'translateY(-50%)';
+            rightBtn.style.zIndex = '10';
+            rightBtn.style.cursor = 'pointer';
+            rightBtn.style.border = 'none';
+            rightBtn.style.borderRadius = '50%';
+            rightBtn.style.width = '40px';
+            rightBtn.style.height = '40px';
+            rightBtn.style.display = 'flex';
+            rightBtn.style.alignItems = 'center';
+            rightBtn.style.justifyContent = 'center';
+            rightBtn.style.color = 'white';
 
             const track = document.createElement('div');
             track.className = 'carousel-track';
@@ -175,11 +285,26 @@ document.addEventListener('DOMContentLoaded', () => {
                 track.appendChild(card);
             });
 
+            // Arrow click handlers
+            const scrollAmount = 300;
+            leftBtn.addEventListener('click', () => {
+                const isRtl = document.documentElement.dir === 'rtl';
+                track.scrollBy({ left: isRtl ? scrollAmount : -scrollAmount, behavior: 'smooth' });
+            });
+
+            rightBtn.addEventListener('click', () => {
+                const isRtl = document.documentElement.dir === 'rtl';
+                track.scrollBy({ left: isRtl ? -scrollAmount : scrollAmount, behavior: 'smooth' });
+            });
+
+            carouselContainer.appendChild(leftBtn);
             carouselContainer.appendChild(track);
+            carouselContainer.appendChild(rightBtn);
+
             row.appendChild(carouselContainer);
             categoriesContainer.appendChild(row);
 
-            // Add Click and Drag Scrolling (Optional enhancement)
+            // Add Click and Drag Scrolling
             enableDragScroll(track);
         });
     }
@@ -238,8 +363,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Hero Play Button
     heroPlayBtn.addEventListener('click', () => {
         openModal({
-            title: "Timeless & Innovation",
-            description: "פרוטוקול מומלץ - הדרכה מלאה",
+            title: heroTitle.innerText.replace('\n', ' '),
+            description: heroDesc.textContent,
             driveEmbedUrl: heroPlayBtn.dataset.driveUrl
         });
     });
@@ -271,8 +396,12 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!isDown) return;
             e.preventDefault();
             const x = e.pageX - slider.offsetLeft;
-            const walk = (x - startX) * 2; // Scroll speed
-            slider.scrollLeft = scrollLeft - walk; // Because RTL scrolling is sometimes opposite
+            const isRtl = document.documentElement.dir === 'rtl';
+
+            // Calculate walk differently based on RTL/LTR
+            const walk = isRtl ? (startX - x) * 2 : (x - startX) * 2;
+
+            slider.scrollLeft = scrollLeft - walk;
         });
     }
 });
