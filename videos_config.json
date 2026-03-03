@@ -1,0 +1,134 @@
+{
+    "categories": [
+        {
+            "id": "pedicure-he",
+            "title": "פדיקור עברית",
+            "videos": [
+                {
+                    "id": "video_he_1",
+                    "title": "פדיקור קלאסי - שלב אחר שלב 1",
+                    "description": "הדרכה מקיפה, חלק 1",
+                    "thumbnail": "assets/pedicure_clean_studio_1772553496144.png",
+                    "driveEmbedUrl": "https://drive.google.com/file/d/1lwYuVloIFOID_q_5Q7dfYs_ftBzFYhC_/preview"
+                },
+                {
+                    "id": "video_he_2",
+                    "title": "פדיקור קלאסי - שלב אחר שלב 2",
+                    "description": "הדרכה מקיפה, חלק 2",
+                    "thumbnail": "assets/kart_product_closeup_1772553479307.png",
+                    "driveEmbedUrl": "https://drive.google.com/file/d/1PSropmwqSoZmG2mIuru09gB5mFvbOBfs/preview"
+                },
+                {
+                    "id": "video_he_3",
+                    "title": "טיפול בפטריות מקיף",
+                    "description": "סקירה מקצועית של תכשירים לטיפול בפטריות ויישום מעשי.",
+                    "thumbnail": "assets/pedicure_clean_studio_1772553496144.png",
+                    "driveEmbedUrl": "https://drive.google.com/file/d/1DRZDblcQuxMnfNwkWbQhqKP7v9xITn-W/preview"
+                },
+                {
+                    "id": "video_he_4",
+                    "title": "פדיקור יבש מתקדם 1",
+                    "description": "טכניקות מתקדמות לפדיקור יבש ושילוב מכשור.",
+                    "thumbnail": "assets/kart_product_closeup_1772553479307.png",
+                    "driveEmbedUrl": "https://drive.google.com/file/d/1asK8_tlr7b5143iVWBQiHLOavewS7bwL/preview"
+                },
+                {
+                    "id": "video_he_5",
+                    "title": "פדיקור יבש מתקדם 2",
+                    "description": "המשך טכניקות מיוחדות להסרת עור וטיפול סדקים.",
+                    "thumbnail": "assets/pedicure_clean_studio_1772553496144.png",
+                    "driveEmbedUrl": "https://drive.google.com/file/d/1K9T9y-DAvjbBr87gk6a16fU0sdELy4aj/preview"
+                },
+                {
+                    "id": "video_he_6",
+                    "title": "פרוטוקולי KART סקירה מלאה",
+                    "description": "סיכום ושאלות למטפלות מתקדמות.",
+                    "thumbnail": "assets/kart_product_closeup_1772553479307.png",
+                    "driveEmbedUrl": "https://drive.google.com/file/d/1ZPbYZMS79glvDvutM1w0ghhf67YH_al-/preview"
+                }
+            ]
+        },
+        {
+            "id": "pedicure-ru",
+            "title": "פדיקור רוסית",
+            "videos": [
+                {
+                    "id": "video_ru_1",
+                    "title": "Учебно-методическое пособие 1",
+                    "description": "הדרכה מפורטת ברוסית על שיטת פדי-קארט (חלק 1).",
+                    "thumbnail": "assets/pedicure_clean_studio_1772553496144.png",
+                    "driveEmbedUrl": "https://drive.google.com/file/d/1-1_W_R0xjTJaJaqZ3vzm7zqhpdwjZ7BR/preview"
+                },
+                {
+                    "id": "video_ru_2",
+                    "title": "Учебно-методическое пособие 2",
+                    "description": "הדרכה מפורטת ברוסית על שיטת פדי-קארט (חלק 2).",
+                    "thumbnail": "assets/kart_product_closeup_1772553479307.png",
+                    "driveEmbedUrl": "https://drive.google.com/file/d/1691Swix2aIiiKz8nCkGHlmkgJ6TJ4zXE/preview"
+                },
+                {
+                    "id": "video_ru_3",
+                    "title": "Протокол лечения грибка 1",
+                    "description": "פרוטוקול טיפול בפטריות ציפורניים עמוס רוסית (חלק 1).",
+                    "thumbnail": "assets/pedicure_clean_studio_1772553496144.png",
+                    "driveEmbedUrl": "https://drive.google.com/file/d/1-6naIkZV_Kmxu0i_eHyJpWcxaljLGkRY/preview"
+                },
+                {
+                    "id": "video_ru_4",
+                    "title": "Протокол лечения грибка 2",
+                    "description": "פרוטוקול טיפול בפטריות ציפורניים עמוס רוסית (חלק 2).",
+                    "thumbnail": "assets/kart_product_closeup_1772553479307.png",
+                    "driveEmbedUrl": "https://drive.google.com/file/d/1T4ek981jpU-JPOppNd_5pksH_omfydeG/preview"
+                },
+                {
+                    "id": "video_ru_5",
+                    "title": "Ответы на вопросы",
+                    "description": "שאלות ותשובות נפוצות על גישת KART ממומחים ברוסית.",
+                    "thumbnail": "assets/pedicure_clean_studio_1772553496144.png",
+                    "driveEmbedUrl": "https://drive.google.com/file/d/1Y7ZhiI6wf-nGNEo7lOrsOeEjYTc7yFy_/preview"
+                }
+            ]
+        },
+        {
+            "id": "cosmetics",
+            "title": "קוסמטיקה",
+            "videos": [
+                {
+                    "id": "video_cos_1",
+                    "title": "Timeless & Innovation 1",
+                    "description": "פרוטוקול אנטי-אייג'ינג מתקדם להצערת העור.",
+                    "thumbnail": "assets/beautician_modern_clinic_1772553460640.png",
+                    "driveEmbedUrl": "https://drive.google.com/file/d/1GidfWqbZ7rSAqfgrLdfmOkQtbiJQhko-/preview"
+                },
+                {
+                    "id": "video_cos_2",
+                    "title": "Timeless & Innovation 2",
+                    "description": "המשך פרוטוקול אנטי-אייג'ינג כולל טיפול בקמטים צועקים.",
+                    "thumbnail": "assets/kart_product_closeup_1772553479307.png",
+                    "driveEmbedUrl": "https://drive.google.com/file/d/1rfoTEGImZzTd2y8ana4Xt5Jo4Uq3Wftu/preview"
+                },
+                {
+                    "id": "video_cos_3",
+                    "title": "M-Acne Masterclass 1",
+                    "description": "הדרכה על התמודדות נכונה עם עור שמן ובעייתי.",
+                    "thumbnail": "assets/beautician_modern_clinic_1772553460640.png",
+                    "driveEmbedUrl": "https://drive.google.com/file/d/1lnbSg57wtJBRdv0noZdJPy_PSwRcjg76/preview"
+                },
+                {
+                    "id": "video_cos_4",
+                    "title": "M-Acne Masterclass 2",
+                    "description": "טכניקות ניקוי ושילוב חומצות (חלק ב').",
+                    "thumbnail": "assets/kart_product_closeup_1772553479307.png",
+                    "driveEmbedUrl": "https://drive.google.com/file/d/1nPFFozZ31-g_7kXa8V4hOFr8IZR45jPS/preview"
+                },
+                {
+                    "id": "video_cos_5",
+                    "title": "מזותרפיה ואלקטרופורציה",
+                    "description": "שילוב מכשור עם תכשירי העור של קארט לקבלת תוצאות.",
+                    "thumbnail": "assets/beautician_modern_clinic_1772553460640.png",
+                    "driveEmbedUrl": "https://drive.google.com/file/d/1k_mF3-Wl-G3XHSUAXNcN6o-s5YL-1Lmt/preview"
+                }
+            ]
+        }
+    ]
+}

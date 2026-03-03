@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KART-FLIX | ספריית הדרכות וידאו</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Heebo:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar glass-effect">
+        <div class="nav-brand" style="display: flex; align-items: center; gap: 6px;">
+            <img src="../images/kart_logo.png" alt="KART" style="height: 32px; filter: brightness(0) invert(1);">
+            <span class="logo-text" style="font-size: 1.6rem;"><span class="text-lime">-FLIX</span></span>
+        </div>
+        <nav class="nav-links">
+            <a href="#hero">ראשי</a>
+            <a href="#library">הספרייה</a>
+        </nav>
+        <div class="nav-profile">
+            <div class="avatar"><i class="fas fa-user-tie"></i></div>
+            <span>אזור אישי</span>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-bg">
+            <img src="assets/beautician_modern_clinic_1772553460640.png" alt="Hero Background">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <span class="badge">הדרכה מומלצת</span>
+            <h1 class="hero-title">הדור הבא של<br><span class="text-lime">טיפולי האנטי-אייג'ינג</span></h1>
+            <p class="hero-desc">למדי את הפרוטוקולים החדשניים ביותר של 2026 עם מיטב המומחים של KART. צפי בהדגמות מעשיות
+                וגלי טכניקות פורצות דרך.</p>
+            <div class="hero-actions">
+                <button class="btn btn-primary" id="heroPlayBtn"
+                    data-drive-url="https://drive.google.com/file/d/1GidfWqbZ7rSAqfgrLdfmOkQtbiJQhko-/preview?autoplay=1">
+                    <i class="fas fa-play"></i> צפייה עכשיו
+                </button>
+                <button class="btn btn-secondary glass-effect">
+                    <i class="fas fa-info-circle"></i> מידע נוסף
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Library Categories -->
+    <section id="library" class="library">
+        <div id="categoriesContainer">
+            <!-- Filled dynamically by script.js -->
+        </div>
+    </section>
+
+    <!-- Video Modal -->
+    <div id="videoModal" class="modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content glass-heavy">
+            <button id="closeModal" class="btn-close"><i class="fas fa-times"></i></button>
+            <div class="video-wrapper">
+                <iframe id="videoIframe" src="" width="100%" height="100%" frameborder="0"
+                    allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="modal-info">
+                <h3 id="modalTitle">כותרת הסרטון</h3>
+                <p id="modalDesc" class="text-gray">תיאור קצר של הסרטון שמוצג כעת בנגן.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+
+</html>
