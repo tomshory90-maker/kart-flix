@@ -30,8 +30,13 @@
         </div>
         <nav class="nav-links">
             <a href="#hero">ראשי</a>
-            <a href="#library">הספרייה</a>
+            <a href="#library">ספריית טיפולים</a>
+            <a href="#marketing">מאגר תוכן לפרסום</a>
         </nav>
+        <div id="daysLeftContainer"
+            style="background: black; border: 1px solid #FFD700; color: #FFD700; padding: 5px 15px; border-radius: 20px; font-weight: bold; display: none;">
+            נותרו לך עוד <span id="daysLeftCount"></span> ימים לצפייה בתכני ההדרכה
+        </div>
         <div class="nav-actions" style="display: flex; align-items: center; gap: 15px;">
             <!-- Language Switcher -->
             <div class="lang-switcher">
@@ -40,11 +45,6 @@
                     <option value="he" style="color: black;">עברית</option>
                     <option value="ru" style="color: black;">Русский</option>
                 </select>
-            </div>
-
-            <div class="nav-profile">
-                <div class="avatar"><i class="fas fa-user-tie"></i></div>
-                <span id="personalAreaText">אזור אישי</span>
             </div>
         </div>
     </header>
@@ -72,10 +72,40 @@
         </div>
     </section>
 
+    <!-- Search Bar -->
+    <section id="search-section" style="padding: 20px 5%; display: flex; justify-content: center;">
+        <div class="search-wrapper" style="position: relative; width: 100%; max-width: 600px;">
+            <i class="fas fa-search"
+                style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); color: rgba(255,255,255,0.6);"></i>
+            <input type="text" id="searchInput" placeholder="חיפוש לפי בעיה רפואית (למשל: פטרת, ציפורן חודרנית)..."
+                style="width: 100%; padding: 15px 45px 15px 15px; border-radius: 30px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: white; font-family: 'Heebo', sans-serif; font-size: 1.1em; outline: none; transition: all 0.3s ease;">
+        </div>
+    </section>
+
     <!-- Video Library Categories -->
     <section id="library" class="library">
         <div id="categoriesContainer">
             <!-- Filled dynamically by script.js -->
+        </div>
+    </section>
+
+    <!-- Marketing Content -->
+    <section id="marketing" class="marketing glass-effect"
+        style="margin: 40px 5%; padding: 40px; border-radius: 20px; text-align: center;">
+        <h2 style="font-size: 2.5em; margin-bottom: 30px; color: var(--primary-lime);">מאגר תוכן לפרסום</h2>
+        <p style="margin-bottom: 30px; font-size: 1.2em; color: rgba(255,255,255,0.8);">הורד חומרים שיווקיים, תמונות
+            וסרטונים לשימוש ברשתות החברתיות.</p>
+        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+            <a href="https://drive.google.com/drive/folders/1z1WUolR-nZZa14GAC2VbxtQF2NYUjdix?usp=drive_link"
+                target="_blank" class="btn btn-secondary glass-effect"
+                style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+                <i class="fab fa-google-drive"></i> תוכן פדיקור
+            </a>
+            <a href="https://drive.google.com/drive/folders/1TdpJ-iGlWNtT_c1P5JsxD0K5eAi3ZV2F?usp=drive_link"
+                target="_blank" class="btn btn-secondary glass-effect"
+                style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+                <i class="fab fa-google-drive"></i> תוכן קוסמטיקה
+            </a>
         </div>
     </section>
 
@@ -88,9 +118,37 @@
                 <iframe id="videoIframe" src="" width="100%" height="100%" frameborder="0"
                     allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen></iframe>
             </div>
-            <div class="modal-info">
-                <h3 id="modalTitle">כותרת הסרטון</h3>
-                <p id="modalDesc" class="text-gray">תיאור קצר של הסרטון שמוצג כעת בנגן.</p>
+            <div class="modal-info" style="display: flex; justify-content: space-between; align-items: flex-start;">
+                <div>
+                    <h3 id="modalTitle">כותרת הסרטון</h3>
+                    <p id="modalDesc" class="text-gray">תיאור קצר של הסרטון שמוצג כעת בנגן.</p>
+                </div>
+                <a id="protocolBtn" href="#" target="_blank" class="btn btn-primary"
+                    style="display: none; align-items: center; gap: 8px; text-decoration: none;">
+                    <i class="fas fa-file-pdf"></i> פרוטוקול טיפול
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gate / Password Overlay -->
+    <div id="gateOverlay" class="gate-overlay glass-heavy">
+        <div class="gate-content">
+            <img src="assets/logo.png" alt="KART-FLIX"
+                style="height: 120px; max-height: 120px; object-fit: contain; margin-bottom: 30px;">
+            <div id="gateLoginSection">
+                <h2 style="margin-bottom: 20px;">הכניסה לספריית ההדרכות למורשות בלבד</h2>
+                <input type="password" id="gatePassword" placeholder="הקלידי סיסמה..."
+                    style="width: 100%; max-width: 300px; padding: 15px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.1); color: white; font-family: 'Heebo', sans-serif; font-size: 1.1em; outline: none; margin-bottom: 15px; text-align: center;">
+                <br>
+                <button id="gateSubmitBtn" class="btn btn-primary"
+                    style="width: 100%; max-width: 300px; justify-content: center;">כניסה לספריה</button>
+                <p id="gateErrorMsg" style="color: #ff6b6b; margin-top: 15px; font-weight: bold; display: none;">סיסמה
+                    שגויה, נסי שוב.</p>
+            </div>
+            <div id="gateExpiredSection" style="display: none;">
+                <h2 style="color: #ff6b6b; margin-bottom: 15px;">תקופת ההדרכה הסתיימה.</h2>
+                <p style="font-size: 1.2em;">לפרטים נוספים פני למנהלת.</p>
             </div>
         </div>
     </div>

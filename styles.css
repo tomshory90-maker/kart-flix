@@ -124,29 +124,31 @@ button {
     color: var(--lime);
 }
 
-.nav-profile {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.nav-profile:hover {
-    color: var(--lime);
-}
-
-.avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: var(--lime);
-    color: var(--bg-color);
+/* ================= GATE OVERLAY ================= */
+.gate-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
+    z-index: 9999;
+    background: rgba(8, 8, 10, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.gate-content {
+    text-align: center;
+    padding: 40px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
+    max-width: 90%;
+    width: 500px;
 }
 
 /* ================= BUTTONS ================= */
@@ -179,6 +181,13 @@ button {
 .btn-secondary:hover {
     background: rgba(255, 255, 255, 0.1);
     transform: translateY(-2px);
+}
+
+/* Marketing Buttons Hover */
+#marketing .btn:hover {
+    background-color: var(--lime);
+    color: var(--bg-color);
+    box-shadow: 0 0 15px var(--lime-glow);
 }
 
 /* ================= HERO ================= */
